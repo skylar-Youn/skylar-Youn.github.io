@@ -1,0 +1,49 @@
+{
+    "name": "FreeConvert - PDF 도구",
+    "short_name": "FreeConvert",
+    "description": "무료 온라인 PDF 변환 및 편집 도구",
+    "start_url": ".",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#1e1e2e",
+    "theme_color": "#6366f1",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "categories": [
+        "utilities",
+        "productivity"
+    ],
+    "lang": "ko",
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "PDF 합치기",
+            "url": "./?tool=merge-pdf",
+            "description": "여러 PDF를 하나로 합치기"
+        },
+        {
+            "name": "PDF 압축",
+            "url": "./?tool=compress-pdf",
+            "description": "PDF 파일 크기 줄이기"
+        }
+    ]
+}

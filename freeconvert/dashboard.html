@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 3-에이전트 대시보드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .stat.done .stat-value {
+            color: #4ade80;
+        }
+
+        .stat.todo .stat-value {
+            color: #f87171;
+        }
+
+        .led-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .led-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .led-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .led {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .led:hover {
+            transform: scale(1.1);
+        }
+
+        .led-light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            transition: all 0.3s;
+        }
+
+        .led-light.off {
+            background: #333;
+        }
+
+        .led-light.on {
+            background: #4ade80;
+            box-shadow: 0 0 30px #4ade80;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 30px #4ade80;
+            }
+
+            50% {
+                box-shadow: 0 0 50px #4ade80;
+            }
+        }
+
+        .led-label {
+            font-weight: bold;
+        }
+
+        .workflow {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .workflow-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .workflow-step {
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .workflow-step.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            transform: scale(1.1);
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-feature {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .btn-docs {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .btn-test {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .btn-cycle {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        #log {
+            background: #0a0a0a;
+            border-radius: 10px;
+            padding: 15px;
+            height: 150px;
+            overflow-y: auto;
+            font-family: monospace;
+            margin-top: 20px;
+        }
+
+        .log-entry.success {
+            color: #4ade80;
+        }
+
+        .log-entry.info {
+            color: #60a5fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 3-에이전트 자동화 시스템</h1>
+            <p>Feature | Docs | Test Operator</p>
+            <div class="stats">
+                <div class="stat done">
+                    <div class="stat-value">30</div>
+                    <div>구현완료</div>
+                </div>
+                <div class="stat todo">
+                    <div class="stat-value">0</div>
+                    <div>미구현</div>
+                </div>
+            </div>
+        </header>
+        <section class="led-section">
+            <h2>💡 LED 상태</h2>
+            <div class="led-container">
+                <div class="led" onclick="activateLed(1)">
+                    <div class="led-light off" id="led1"></div>
+                    <div class="led-label">Feature</div>
+                </div>
+                <div class="led" onclick="activateLed(2)">
+                    <div class="led-light off" id="led2"></div>
+                    <div class="led-label">Docs</div>
+                </div>
+                <div class="led" onclick="activateLed(3)">
+                    <div class="led-light off" id="led3"></div>
+                    <div class="led-label">Test</div>
+                </div>
+            </div>
+        </section>
+        <section class="workflow">
+            <h2>🔄 워크플로우</h2>
+            <div class="workflow-diagram">
+                <div class="workflow-step" id="step1">1.스펙확인</div><span>→</span>
+                <div class="workflow-step" id="step2">2.프로그램</div><span>→</span>
+                <div class="workflow-step" id="step3">3.테스트</div>
+            </div>
+            <p style="text-align:center;margin-top:15px;opacity:0.5">↺ 피드백 루프</p>
+        </section>
+        <section class="controls">
+            <button class="btn btn-feature" onclick="runAgent(1)">🎯 Feature</button>
+            <button class="btn btn-docs" onclick="runAgent(2)">📝 Docs</button>
+            <button class="btn btn-test" onclick="runAgent(3)">🧪 Test</button>
+            <button class="btn btn-cycle" onclick="runCycle()">🔄 사이클</button>
+        </section>
+        <div id="log"></div>
+    </div>
+    <script>
+        function activateLed(n) { document.querySelectorAll('.led-light').forEach(l => l.className = 'led-light off'); document.querySelectorAll('.workflow-step').forEach(s => s.classList.remove('active')); if (n > 0) { document.getElementById('led' + n).className = 'led-light on'; document.getElementById('step' + n).classList.add('active'); } }
+        function log(m, t = 'info') { const l = document.getElementById('log'); l.innerHTML += `<div class="log-entry ${t}">${new Date().toLocaleTimeString()} - ${m}</div>`; l.scrollTop = l.scrollHeight; }
+        function runAgent(n) { const names = ['', 'Feature', 'Docs', 'Test']; activateLed(n); log(names[n] + ' 실행...'); setTimeout(() => log(names[n] + ' 완료!', 'success'), 1500); }
+        async function runCycle() { log('🔄 사이클 시작'); for (let i = 1; i <= 3; i++) { activateLed(i); log('[' + i + '/3] 실행중...'); await new Promise(r => setTimeout(r, 1500)); log('완료', 'success'); } activateLed(0); log('✅ 사이클 완료!', 'success'); }
+        log('대시보드 준비완료', 'success');
+    </script>
+</body>
+
+</html>
