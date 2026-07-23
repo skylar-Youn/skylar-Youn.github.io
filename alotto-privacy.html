@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="skyplay이 제공하는 Alotto(com.skya.Alotto) 앱의 개인정보처리방침">
+  <title>Alotto 개인정보처리방침</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f6f8fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5d6678;
+      --line: #dfe4ec;
+      --accent: #2158d5;
+      --accent-soft: #eef4ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 40px auto;
+      padding: 48px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(27, 41, 70, 0.08);
+    }
+
+    h1, h2 { line-height: 1.35; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    h2 { margin: 40px 0 12px; padding-top: 8px; font-size: 1.35rem; }
+    p, ul { margin: 10px 0; }
+    ul { padding-left: 24px; }
+    a { color: var(--accent); }
+
+    .updated { margin: 0 0 28px; color: var(--muted); }
+    .identity {
+      margin: 24px 0 32px;
+      padding: 22px 24px;
+      background: var(--accent-soft);
+      border: 1px solid #ccdcff;
+      border-radius: 14px;
+    }
+    .identity strong { color: #153d9f; }
+    .identity dl {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 8px 16px;
+      margin: 0;
+    }
+    .identity dt { color: var(--muted); font-weight: 600; }
+    .identity dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    th, td { padding: 13px 14px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #f2f5f9; }
+
+    .note {
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      background: #f8faff;
+    }
+
+    footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); }
+
+    @media (max-width: 640px) {
+      main { width: 100%; margin: 0; padding: 28px 20px 40px; border: 0; border-radius: 0; }
+      .identity dl { grid-template-columns: 1fr; gap: 2px; }
+      .identity dd { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Alotto 개인정보처리방침</h1>
+    <p class="updated">시행일: 2026년 7월 23일 · 최종 수정일: 2026년 7월 23일</p>
+
+    <section class="identity" aria-label="앱 및 개발자 식별정보">
+      <dl>
+        <dt>앱 이름</dt>
+        <dd>Alotto (Alotto 로또)</dd>
+        <dt>Google Play 개발자명</dt>
+        <dd>skyplay</dd>
+        <dt>개발자 및 개인정보처리자</dt>
+        <dd>윤석규 (개인 개발자)</dd>
+        <dt>Android 패키지 ID</dt>
+        <dd>com.skya.Alotto</dd>
+        <dt>사업자등록번호</dt>
+        <dd>889-29-00699</dd>
+        <dt>지원 이메일</dt>
+        <dd><a href="mailto:lisk9401@gmail.com">lisk9401@gmail.com</a></dd>
+        <dt>개발자 이메일</dt>
+        <dd><a href="mailto:skyutech@gmail.com">skyutech@gmail.com</a></dd>
+      </dl>
+    </section>
+
+    <p><strong>skyplay(개발자 윤석규, 이하 “개발자”)</strong>는 Google Play에서 제공하는 <strong>Alotto</strong> 앱(패키지 ID: <strong>com.skya.Alotto</strong>, 이하 “앱”) 이용자의 개인정보를 보호하기 위해 다음과 같이 개인정보처리방침을 공개합니다.</p>
+
+    <h2>1. 처리하는 정보와 이용 목적</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>정보 또는 데이터</th>
+            <th>이용 목적</th>
+            <th>처리 및 보관 방식</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>사용자가 저장한 로또 번호, 회차, 번호 생성 시각 및 QR 코드에서 인식한 복권 정보</td>
+            <td>추천 번호 및 구매 번호 저장, 당첨 결과 확인</td>
+            <td>사용자 기기에만 저장되며 개발자 서버로 전송되지 않습니다. 사용자가 삭제하거나 앱 데이터 삭제 또는 앱 제거 시 삭제됩니다.</td>
+          </tr>
+          <tr>
+            <td>카메라 영상</td>
+            <td>복권 용지의 QR 코드 인식</td>
+            <td>QR 스캔 화면에서 기기 내 실시간 처리되며, 앱은 카메라 영상 자체를 저장하거나 개발자 서버로 전송하지 않습니다.</td>
+          </tr>
+          <tr>
+            <td>IP 주소(일반적 위치 추정에 사용될 수 있음), 앱 및 광고 상호작용, 진단·성능 정보, 기기 또는 광고 식별자</td>
+            <td>광고 제공, 광고 및 앱 이용 분석, 부정행위 방지, 서비스 보안과 성능 개선</td>
+            <td>Google Mobile Ads SDK가 자동으로 수집·공유할 수 있으며 Google의 정책에 따라 처리됩니다. 전송 중에는 암호화됩니다.</td>
+          </tr>
+          <tr>
+            <td>네트워크 요청에 수반되는 IP 주소, 사용자 에이전트, 접속 시각 등의 통신 정보</td>
+            <td>당첨 번호 조회 및 사용자가 요청한 공식 결과 페이지 연결</td>
+            <td>동행복권 등 연결 대상 서비스가 자체 정책과 보관 기준에 따라 처리할 수 있습니다. 개발자는 별도 서버에 이를 저장하지 않습니다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. 정보의 수집 방법</h2>
+    <ul>
+      <li>사용자가 번호 저장 또는 QR 스캔 기능을 이용할 때 앱 내에서 생성·저장</li>
+      <li>앱에서 광고가 표시되거나 사용자가 광고와 상호작용할 때 Google Mobile Ads SDK를 통해 자동 처리</li>
+      <li>당첨 번호 조회 또는 공식 결과 페이지 열기를 요청할 때 인터넷 통신 과정에서 처리</li>
+    </ul>
+    <p class="note">앱은 회원가입이나 로그인을 제공하지 않으며, 이름·전화번호·연락처·정확한 위치·사진을 개발자 서버에서 수집하지 않습니다.</p>
+
+    <h2>3. 제3자 제공 및 외부 서비스</h2>
+    <p>개발자는 이용자의 개인정보를 판매하지 않습니다. 다만 앱 기능 제공을 위해 다음 외부 서비스가 정보를 처리할 수 있습니다.</p>
+    <ul>
+      <li><strong>Google Mobile Ads</strong>: 광고 제공, 분석 및 부정행위 방지를 위해 위 표의 광고 관련 정보를 수집·공유할 수 있습니다. 자세한 내용은 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>과 <a href="https://policies.google.com/technologies/partner-sites?hl=ko">Google 서비스를 사용하는 앱의 정보 처리 안내</a>에서 확인할 수 있습니다.</li>
+      <li><strong>동행복권</strong>: 최신 당첨 정보 조회 및 공식 QR 결과 페이지 연결에 사용됩니다. 외부 페이지를 열면 해당 서비스의 정책이 적용됩니다. 자세한 내용은 <a href="https://www.dhlottery.co.kr/">동행복권 웹사이트</a>에서 확인할 수 있습니다.</li>
+    </ul>
+    <p>외부 사업자는 서비스 제공에 필요한 범위에서 국외에 위치한 서버를 이용할 수 있으며, 구체적인 처리 위치와 보유기간은 각 사업자의 정책에 따릅니다.</p>
+
+    <h2>4. 앱 권한</h2>
+    <ul>
+      <li><strong>카메라</strong>: 복권 QR 코드 스캔에만 사용합니다. 권한을 허용하지 않아도 QR 스캔을 제외한 기능은 이용할 수 있습니다.</li>
+      <li><strong>인터넷</strong>: 당첨 정보 조회, 공식 결과 페이지 연결 및 광고 표시에 사용합니다.</li>
+    </ul>
+
+    <h2>5. 보유기간과 파기</h2>
+    <p>개발자는 앱 이용 정보를 별도 서버에 보유하지 않습니다. 기기에 저장된 번호 및 QR 정보는 사용자가 앱 안에서 해당 항목을 삭제하거나, 운영체제 설정에서 앱 데이터를 삭제하거나, 앱을 제거할 때 삭제됩니다. Google 및 연결된 외부 서비스가 처리하는 정보의 보유기간과 삭제 절차는 각 사업자의 개인정보처리방침에 따릅니다.</p>
+
+    <h2>6. 이용자의 권리와 선택</h2>
+    <ul>
+      <li>앱 안에서 저장한 번호와 QR 정보를 직접 조회하고 삭제할 수 있습니다.</li>
+      <li>운영체제 설정에서 카메라 권한을 언제든지 철회할 수 있습니다.</li>
+      <li>Android의 광고 개인정보 보호 설정 또는 <a href="https://myadcenter.google.com/">Google 내 광고 센터</a>에서 광고 맞춤설정을 관리할 수 있습니다.</li>
+      <li>개인정보 관련 문의는 아래 연락처로 요청할 수 있습니다.</li>
+    </ul>
+
+    <h2>7. 아동의 개인정보</h2>
+    <p>앱은 만 14세 미만 아동을 대상으로 제작되지 않았으며, 개발자는 아동의 개인정보를 의도적으로 수집하지 않습니다. 보호자가 아동의 정보가 처리되었다고 판단하는 경우 아래 연락처로 알려 주시면 확인 후 필요한 조치를 하겠습니다.</p>
+
+    <h2>8. 안전성 확보 조치</h2>
+    <p>앱은 저장한 번호와 QR 정보를 기기 내부 저장소에 보관하고, 지원되는 외부 서비스와 HTTPS 등 암호화된 통신을 사용합니다. 다만 이용자의 기기 보안 상태와 외부 사업자의 정보 처리에는 각 환경 및 사업자의 보안 정책이 적용됩니다.</p>
+
+    <h2>9. 개인정보 보호 문의</h2>
+    <ul>
+      <li>개인정보 보호책임자: 윤석규</li>
+      <li>Google Play 개발자명: skyplay</li>
+      <li>이메일: <a href="mailto:skyutech@gmail.com">skyutech@gmail.com</a></li>
+      <li>앱 지원: <a href="mailto:lisk9401@gmail.com">lisk9401@gmail.com</a></li>
+    </ul>
+
+    <h2>10. 방침의 변경</h2>
+    <p>법령, 앱 기능 또는 외부 서비스의 변경으로 이 방침이 수정되는 경우 이 페이지에 시행일과 변경 내용을 반영합니다.</p>
+
+    <footer>
+      <p>이 개인정보처리방침은 Google Play 앱 <strong>Alotto</strong>와 개발자 <strong>skyplay(윤석규)</strong>에게만 적용됩니다.</p>
+    </footer>
+  </main>
+</body>
+</html>
